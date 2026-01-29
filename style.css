@@ -1,85 +1,80 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
-  background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
+    height: 100vh;
+    background: radial-gradient(circle, #ffdde1, #ee9ca7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contenedor {
+    text-align: center;
+    color: #fff;
+    animation: aparecer 2s ease;
+    z-index: 2;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.titulo {
+    font-size: 3.5rem;
+    animation: brillo 3s infinite alternate;
+}
+
+@keyframes brillo {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 30px #ff4d6d; }
+}
+
+.mensaje {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.corazon {
+    font-size: 6rem;
+    animation: latido 1.2s infinite;
+}
+
+@keyframes latido {
+    0% { transform: scale(1); }
+    25% { transform: scale(1.15); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+}
+
+.submensaje {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    opacity: 0.9;
 }
 
 canvas {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
-
-.container {
-  z-index: 1;
-  text-align: center;
-  padding: 30px;
-  animation: fadeIn 2s ease;
-}
-
-h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}
-
-.heart {
-  color: #ff2d55;
-  animation: pulse 1.5s infinite;
-}
-
-#message {
-  font-size: 1.5rem;
-  max-width: 600px;
-  margin: auto;
-  line-height: 1.6;
-  min-height: 120px;
-}
-
-.signature {
-  margin-top: 30px;
-  font-style: italic;
-  opacity: 0.8;
-  animation: fadeUp 2s ease forwards;
-  animation-delay: 4s;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.25); }
-  100% { transform: scale(1); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 2.8rem;
-  }
-  #message {
-    font-size: 1.2rem;
-  }
+    position: absolute;
+    top: 0;
+    left: 0;
 }
